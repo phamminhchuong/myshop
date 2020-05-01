@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java/Defines/Defines.java=UTF-8
+encoding//src/main/java/Defines/MailDefine.java=UTF-8
+encoding//src/main/java/controller/AuthController.java=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/admin/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/auth/login.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/auth/resetPass.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/public/chinhsach/csach/dieukhoansudung.jsp=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true

@@ -1,0 +1,67 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<http use-expressions="true">
+		<csrf disabled="true"/><!-- chong hacker -->
+		
+		<intercept-url pattern="/admin" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/profile" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/profile/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/user" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/user/**" access="hasRole('ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/order" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/order/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/cat" access="hasAnyRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/cat/**" access="hasAnyRole('ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/blogs" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/blogs/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/contact" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/contact/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/color" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/color/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<intercept-url pattern="/admin/product" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/product/**" access="hasAnyRole('ROLE_EDITER', 'ROLE_ADMIN')" />
+		
+		<!-- <intercept-url pattern="/admin/thong-ke" access="hasAnyRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/admin/thong-ke/**" access="hasAnyRole('ROLE_ADMIN')" /> -->
+		
+        <intercept-url pattern="/**" access="permitAll()" />
+ 
+		 <access-denied-handler error-page="/admin/403" />
+ 
+       <form-login login-page='/auth/login' login-processing-url="/auth/login"
+            default-target-url="/admin" always-use-default-target="true"
+            authentication-failure-url="/auth/login/error" username-parameter="username"
+            password-parameter="password" />
+ 
+        <logout logout-url="/auth/logout" logout-success-url="/auth/login"
+            delete-cookies="JSESSIONID" invalidate-session="true" />
+ 
+       
+ 
+    </http>
+   <!--  <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></beans:bean> -->
+    <authentication-manager>
+        <!-- authentication from database -->
+        <authentication-provider>
+         <password-encoder hash="md5" />
+            <jdbc-user-service data-source-ref="DataSource"
+                users-by-username-query="select username, password, enable from user where username=?"
+                authorities-by-username-query="select username, concat('ROLE_', nameR) role from user as u inner join roles as r on r.roles_id = u.roles_id where username=?" />
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

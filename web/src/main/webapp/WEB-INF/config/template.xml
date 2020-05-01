@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+       
+<tiles-definitions>
+
+<!--  TEMPLATE NONE-->
+  <definition name="none.template" template="/WEB-INF/templates/template-none.jsp" >
+    <put-attribute name="body" value="" />
+  </definition>
+
+
+
+<definition name="google.index" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/google.jsp" />
+  </definition>
+
+ <!-- LOGIN TEMPLATE -->
+  <definition name="login.template" template="/WEB-INF/templates/login/template.jsp" >
+    <put-attribute name="header" value="/WEB-INF/templates/login/header.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/login/footer.jsp" />
+  </definition>
+
+<definition name="admin.login" extends="login.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/login.jsp" />
+  </definition>
+
+
+
+<definition name="page.403" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/403.jsp" />
+  </definition>
+  <definition name="page.404" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/404.jsp" />
+  </definition>
+
+<definition name="page.getmail" extends="login.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/getemail.jsp" />
+  </definition>
+
+<definition name="page.blank" extends="login.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/blank.jsp" />
+  </definition>
+
+<definition name="page.resetPass" extends="login.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/auth/resetPass.jsp" />
+  </definition>
+
+ <!-- PUBLIC TEMPLATE -->
+  <definition name="admin.template" template="/WEB-INF/templates/admin/template.jsp" >
+    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+    <put-attribute name="leftbar" value="/WEB-INF/templates/admin/left-bar.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/admin/footer.jsp" />
+  </definition>
+
+  <!-- INDEX -->
+  <definition name="admin.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/index.jsp" />
+  </definition>
+
+
+ <!-- STATISTICAL -->
+  <definition name="admin.statistical.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/statistical/index.jsp" />
+  </definition>
+
+	<definition name="admin.profile.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/profile.jsp" />
+  </definition>
+ 
+  
+  
+  <!-- USERRRRRR -->
+  
+  <definition name="admin.user.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/user/index.jsp" />
+  </definition>
+  
+   <definition name="admin.user.add" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/user/add.jsp" />
+  </definition>
+
+	 <definition name="admin.user.edit" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/user/edit.jsp" />
+  </definition>
+   <!-- ADMIN TEMPLATE -->
+   
+   
+   <!-- USER ADDRESS -->
+   
+   <definition name="admin.user.address" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/user/address.jsp" />
+   </definition>
+   
+ 
+   
+  <!-- USERRRRRR --> 
+   
+   
+   <!--END USER ADDRESS  -->
+  
+  <definition name="admin.cat.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/cat/index.jsp" />
+  </definition>
+  
+   <definition name="admin.cat.add" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/cat/add.jsp" />
+  </definition>
+
+	 <definition name="admin.cat.edit" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/cat/edit.jsp" />
+  </definition>
+   
+    <!-- PRODUCTTTT -->
+  
+  <definition name="admin.product.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product/index.jsp" />
+  </definition>
+  
+   <definition name="admin.product.add" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product/add.jsp" />
+  </definition>
+
+	 <definition name="admin.product.edit" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product/edit.jsp" />
+  </definition>
+  
+  
+    
+  <definition name="admin.product.amount" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product/amountPro.jsp" />
+  </definition>
+  <!-- BOLGS -->
+  
+  <definition name="admin.blog.index" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/blog/index.jsp" />
+  </definition>
+  
+   <definition name="admin.blog.add" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/blog/add.jsp" />
+  </definition>
+
+	 <definition name="admin.blog.edit" extends="admin.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/blog/edit.jsp" />
+  </definition>
+  
+  
+  <!-- ORDER -->
+   <definition name="admin.order.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/order/ordercat.jsp" />
+   </definition>
+  
+  <definition name="admin.order.view" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/order/orderdetail.jsp" />
+   </definition>
+  <!--END ORDER -->
+  
+  
+  <!-- COUPON  -->
+  	 <definition name="admin.coupon.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/coupon/index.jsp" />
+   </definition>
+  
+
+   <definition name="admin.coupon.add" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/coupon/add.jsp" />
+   </definition>
+   
+      <definition name="admin.coupon.edit" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/coupon/edit.jsp" />
+   </definition>
+   <!--END COUPON  -->
+  
+  <!-- COLOR  -->
+  	 <definition name="admin.color.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/color/index.jsp" />
+   </definition>
+  
+
+   <definition name="admin.color.add" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/color/add.jsp" />
+   </definition>
+   
+      <definition name="admin.color.edit" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/color/edit.jsp" />
+   </definition>
+  <!--END COLOR  -->
+  
+  <!-- CONTACT  -->
+  	 <definition name="admin.contact.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/contact/index.jsp" />
+   </definition>
+  
+
+   <definition name="admin.contact.view" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/contact/view.jsp" />
+   </definition>
+   
+  <!--END CONTACT  -->
+  <!-- COMMENT  -->
+  <definition name="admin.comment.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/comment/index.jsp" />
+  </definition>
+  
+
+
+ <definition name="admin.comment.pro.index" extends="admin.template">
+     <put-attribute name="body" value="/WEB-INF/jsp/admin/comment/pro/index.jsp" />
+  </definition>
+  
+  <!--END COMMENT  -->
+  
+ 
+  
+  <!-- END STATISTICAL -->
+  
+   <!--AJAX -->
+  	<definition name="ajax.delimage" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/admin/product/ajaxdelIMG.jsp" />
+  </definition>	
+  
+   
+   <definition name="ajax.addcomment.blog" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/blog/comment.jsp" />
+  </definition>	
+   
+   <definition name="ajax.addaddress" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/ajaxadd.jsp" />
+  </definition>	
+   
+    <definition name="public.checkout.success" extends="none.template">
+    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/OrderSuccess.jsp" />
+  </definition>	
+   <!-- PUBLICCCCCCCCCCCCCCCCCCCCCCCCCCC -->
+   	
+   	
+   		<!-- INDEX -->
+   	<definition name="public.template" template="/WEB-INF/templates/public/template.jsp" >
+    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+    <put-attribute name="slide" value="/WEB-INF/templates/public/slide.jsp" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+  </definition>
+   		
+   	<definition name="public.template.checkout" template="/WEB-INF/templates/public/template.jsp" >
+    <put-attribute name="header" value="/WEB-INF/templates/public/headerck.jsp" />
+    <put-attribute name="slide" value="" />
+    <put-attribute name="body" value="" />
+    <put-attribute name="footer" value="/WEB-INF/templates/public/footerck.jsp" />
+  </definition>	
+   		
+   		<!--END INDEX -->
+   		
+   		<!--BLOG -->
+   	<definition name="public.index" extends="public.template">
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/index.jsp" />
+	 </definition>	
+	 
+	 <definition name="public.blog.index" extends="public.template">
+	 	<put-attribute name="slide" value="" />
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/blog/index.jsp" />
+	 </definition>
+	 <definition name="public.blog.detail" extends="public.template">
+	 	<put-attribute name="slide" value="" />
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/blog/detail.jsp" />
+	 </definition>
+	 	
+   		<!--END BLOG -->
+   		
+   		<!--PRODUCT -->
+   		<definition name="public.index" extends="public.template">
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/index.jsp" />
+	 </definition>	
+	 
+	 <definition name="public.product.index" extends="public.template">
+	 	<put-attribute name="slide" value="" />
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/product/index.jsp" />
+	 </definition>
+	 
+	 
+	 <definition name="public.product.detail" extends="public.template">
+	 	<put-attribute name="slide" value="" />
+	    <put-attribute name="body" value="/WEB-INF/jsp/public/product/detail.jsp" />
+	 </definition>
+   		<!--END PRODUCT -->
+   		
+   		
+   		<!-- CHECKOUT -->
+   		<definition name="public.checkout.cart" extends="public.template">
+	   		<put-attribute name="slide" value="" />
+		    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/cart.jsp" />
+	 	</definition>
+   		
+   		<definition name="public.checkout.login" extends="public.template.checkout">
+	   		
+		    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/login.jsp" />
+	 	</definition>
+   		
+   		<definition name="public.checkout.address" extends="public.template.checkout">
+	   		
+		    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/address.jsp" />
+	 	</definition>
+   		
+   		
+   		<definition name="public.checkout.payment" extends="public.template.checkout">
+	   		
+		    <put-attribute name="body" value="/WEB-INF/jsp/public/checkout/payment.jsp" />
+	 	</definition>
+   		<!--END CHECKOUT -->
+   		<definition name="public.template.customer" template="/WEB-INF/templates/public/templatecustomer.jsp" >
+		    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+		    <put-attribute name="body" value="" />
+		    <put-attribute name="left-bar" value="/WEB-INF/templates/public/left-bar.jsp" />
+		    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+		  </definition>	
+   		
+   		
+   		<definition name="public.customer.infor" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/infor.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.customer.historyorder" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/order.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.customer.vieworder" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/orderdetail.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.customer.address" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/address.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.customer.address.add" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/addAddress.jsp"></put-attribute>
+   		</definition>
+   		
+   		
+   		<definition name="public.customer.favorite" extends="public.template.customer">
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/customer/favorite.jsp"></put-attribute>
+   		</definition>
+   		
+   		<!-- END CUSTOMER -->
+   		
+   		<!-- CONTACT -->
+   			
+   		<definition name="public.contact.index" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/contact.jsp"></put-attribute>
+   		</definition>
+   		
+   		<!--END CONTACT -->
+   		
+   		<!-- CHÍNH SÁCH	 -->
+   		<definition name="public.policy.index" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/index.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.policy.huongdan" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/huongdan.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.policy.dieukhoansudung" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/csach/dieukhoansudung.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.policy.khieunai" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/csach/cskhieunai.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.policy.doitra" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/csach/csdoitra.jsp"></put-attribute>
+   		</definition>
+   	
+   		<definition name="public.policy.baomat" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/csach/baomatcanhan.jsp"></put-attribute>
+   		</definition>
+   		
+   		<definition name="public.policy.gioithieu" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/chinhsach/gioithieu.jsp"></put-attribute>
+   		</definition>
+   		
+   		
+   		<definition name="public.bodyfat.index" extends="public.template">
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/bodyfat.jsp"></put-attribute>
+   		</definition>
+   		
+   		
+   		<definition name="public.foodnutrient.index" extends="public.template">
+   		<put-attribute name="header" value="" />
+   			<put-attribute name="slide" value="" />
+   			<put-attribute name="body" value="/WEB-INF/jsp/public/foodnutri.jsp"></put-attribute>
+   			<put-attribute name="footer" value="" />
+   		</definition>
+   		<!-- -CUSTOMER -->
+    <!-- ENDD PUBLICCCCCCCCCCCCCCCCCCCCCCCCCCC -->
+</tiles-definitions>
