@@ -1,0 +1,43 @@
+package util;
+
+import java.text.Normalizer;
+import java.text.NumberFormat;
+import java.text.Normalizer.Form;  
+import java.util.Locale;  
+import java.util.regex.Pattern;
+
+
+public class SlugUtil {  
+  
+  private static final Pattern NONLATIN = Pattern.compile("[^\\w-]");  
+  private static final Pattern WHITESPACE = Pattern.compile("[\\s]");  
+  
+  public static String makeSlug(String input) {  
+    String nowhitespace = WHITESPACE.matcher(input).replaceAll("-");  
+    String normalized = Normalizer.normalize(nowhitespace, Form.NFD);  
+    String slug = NONLATIN.matcher(normalized).replaceAll("");  
+    return slug.toLowerCase(Locale.ENGLISH);  
+  } 
+  
+//substringWord
+  public static String substringWord(String str, int position) {
+      String strNew = "";
+      if (str.length() <= position) {
+          strNew = str;
+      } else {
+          strNew = str.substring(0, position);
+          if (!str.substring(position, position + 1).equals(" ") || !str.substring(position, position).equals(" ")) {
+              int lastSpaceIndex = strNew.lastIndexOf(" ");
+              strNew = strNew.substring(0, lastSpaceIndex).concat("...");
+          }
+      }
+      return strNew;
+  }
+  
+  public static String changeNumToVnd(int money) {
+	  Locale locale = new Locale("vn", "VN");      
+	  NumberFormat c = NumberFormat.getCurrencyInstance(locale);
+	  return c.format(money);
+  }
+  
+} 
